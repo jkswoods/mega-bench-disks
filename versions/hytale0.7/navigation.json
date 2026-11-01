@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Overview",
+    "path": "/",
+    "icon": "house"
+  },
+  {
+    "title": "Installation",
+    "path": "/installation",
+    "icon": "download"
+  },
+  {
+    "title": "Your first disk",
+    "path": "/getting-started",
+    "icon": "rocket"
+  },
+  {
+    "title": "Storage and racks",
+    "path": "/storage",
+    "icon": "hard-drive"
+  },
+  {
+    "title": "Recipes and upgrades",
+    "path": "/recipes",
+    "icon": "book-open"
+  },
+  {
+    "title": "Multiplayer and known limits",
+    "path": "/compatibility",
+    "icon": "users"
+  },
+  {
+    "title": "Troubleshooting",
+    "path": "/troubleshooting",
+    "icon": "circle-help"
+  },
+  {
+    "title": "Credits and notices",
+    "path": "/notices",
+    "icon": "scale"
+  }
+]

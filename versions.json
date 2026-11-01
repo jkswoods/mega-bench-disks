@@ -1,0 +1,9 @@
+{
+  "latest": "hytale0.7",
+  "families": {
+    "hytale0.7": {
+      "sourceBranch": "hytale0.7",
+      "serverVersion": ">=0.7.4 <0.8.0"
+    }
+  }
+}
