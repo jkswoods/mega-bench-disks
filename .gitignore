@@ -1,0 +1,8 @@
+build/
+.cache/
+candidate/
+.release/
+*.log
+__pycache__/
+.publication-policy.json
+publication-audit.json

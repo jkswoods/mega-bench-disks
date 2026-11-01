@@ -1,0 +1,9 @@
+# Third-party notices
+
+Mega Bench: Disks is an independent companion mod and is not an official Hytale product. Its original code, documentation and project artwork are offered under the MIT License in LICENSE.
+
+Hytale is a separately licensed runtime and build dependency. No Hytale server, client, stock bitmap, stock sound, toolchain or game archive is bundled. Native Common.ui styles and item-quality/icon surfaces are referenced through the installed game. The inset slot texture is original vector geometry, exported without reading or copying stock pixels. Game content visible in screenshots remains game content and is not relicensed by this mod.
+
+Mega Bench is a separately installed MIT-licensed dependency, copyright2026jkswoods. The optional companion API is an extension to Mega Bench; original recipes, crafting outputs and refunds remain under the native game authority. Other optional mods keep their own terms and are not bundled.
+
+Runtime Memorite and handling sound families were generated through the connected ElevenLabs Sound Effects workflow and exported for actual item actions. Generated recordings remain subject to the generating account's applicable ElevenLabs terms. Original cartridge/rack/ore geometry and pixel artwork belong to this project. OpenAI-generated images were used as private design references; generated concepts and private test evidence are not included in this mod JAR.

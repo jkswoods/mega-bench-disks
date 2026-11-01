@@ -1,0 +1,60 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.MBD_MemoriteOre.name"
+  },
+  "Icon": "Icons/ItemsGenerated/MBD_MemoriteOre.png",
+  "Categories": [
+    "Blocks.Ores"
+  ],
+  "SubCategory": "Ore",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "CubeWithModel",
+    "CustomModel": "Blocks/MegaBenchDisks/MemoriteOre.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/MegaBenchDisks/Workshop.png",
+        "Weight": 1
+      }
+    ],
+    "BlockSoundSetId": "MBD_Memorite",
+    "Group": "Stone",
+    "RandomRotation": "YawStep90",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "OreIron",
+        "DropList": {
+          "Container": {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "MBD_RawMemorite",
+              "QuantityMin": 1,
+              "QuantityMax": 1
+            }
+          }
+        }
+      }
+    },
+    "BlockParticleSetId": "Ore",
+    "Textures": [
+      {
+        "Weight": 1,
+        "All": "Blocks/MegaBenchDisks/MemoriteHost.png"
+      }
+    ],
+    "ParticleColor": "#87719d",
+    "PhysicalMaterialId": "Stone",
+    "TextureComputedColor": "#656659"
+  },
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "MBD_Memorite",
+  "MaxStack": 64,
+  "Tags": {
+    "Type": [
+      "Ore"
+    ],
+    "Family": [
+      "Memorite"
+    ]
+  }
+}

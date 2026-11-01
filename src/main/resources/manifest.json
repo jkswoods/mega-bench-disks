@@ -1,0 +1,12 @@
+{
+  "Group": "MegaBench",
+  "Name": "Disks",
+  "Version": "0.1.0",
+  "Description": "Memorite disks and connected, stackable Drive Rack storage for Mega Bench.",
+  "ServerVersion": ">=0.7.4 <0.8.0",
+  "Main": "dev.megabench.disks.DisksPlugin",
+  "IncludesAssetPack": true,
+  "Dependencies": {
+    "MegaBench:MegaBench": ">=0.3.0 <0.4.0"
+  }
+}

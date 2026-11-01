@@ -1,0 +1,3 @@
+$C = "../../Common.ui";
+$S = "StorageStyles.ui";
+ItemGrid #StoredTiles { Anchor: (Full: 0); Style: $S.@GridStyle; SlotsPerRow: 9; ShowScrollbar: false; AreItemsDraggable: false; AllowMaxStackDraggableItems: false; IsCreativeSource: false; DisplayItemQuantity: true; RenderItemQualityBackground: true; HitTestVisible: true; }

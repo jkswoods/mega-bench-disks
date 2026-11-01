@@ -1,0 +1,7 @@
+Group { Anchor: (Width: 192, Height: 64, Right: 8); LayoutMode: Left;
+ ItemIcon #CostIcon { Anchor: (Width: 52, Height: 52, Right: 6); HitTestVisible: false; }
+ Group { FlexWeight: 1; LayoutMode: Top;
+  Label #CostName { Anchor: (Height: 34); Style: (FontSize: 14, TextColor: #96a9be, Wrap: true); }
+  Label #CostQuantity { Anchor: (Height: 24); Style: (FontSize: 16, TextColor: #e8cc81, VerticalAlignment: Center); }
+ }
+}

@@ -1,0 +1,32 @@
+{
+  "provider": "ElevenLabs",
+  "model": "eleven_text_to_sound_v2",
+  "families": [
+    {
+      "family": "Handling",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt": "A single compact wooden and blue steel workshop cartridge slides into an attached rack bay, a soft ceramic shuffle and short brass latch click, quiet close dry game foley, gentle low mechanical clunk,",
+      "duration_secs": 1,
+      "export_sha256": "9501560052782ab2ba26a625631d4bfb9b0c5f52923a7d4df0f84890144f7b1b",
+      "export_settings": {
+        "format": "OGG Vorbis",
+        "channels": 1,
+        "sample_rate": 48000,
+        "filters": "volume=0.40,afade=t=in:d=0.008,afade=t=out:st=0.93:d=0.07"
+      }
+    },
+    {
+      "family": "Memorite",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt": "A single iron pick strike into natural rough stone containing squat brittle violet mineral outcrops, close dry stone chip crack followed by a soft crystalline granular tumble, low and warm, restrained",
+      "duration_secs": 1,
+      "export_sha256": "02910a330bb28bc9fb0e770657935f1f8df7cef0eb43b87ef5ab82d10b736345",
+      "export_settings": {
+        "format": "OGG Vorbis",
+        "channels": 1,
+        "sample_rate": 48000,
+        "filters": "volume=0.40,afade=t=in:d=0.008,afade=t=out:st=0.93:d=0.07"
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+name: Publish mod release
+run-name: Publish ${{ github.ref_name }} · ${{ inputs.bump }} · ${{ inputs.release_type }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: Version bump for this Hytale support line
+        type: choice
+        options: [Patch, Minor, Major]
+        default: Patch
+        required: true
+      release_type:
+        description: CurseForge channel and GitHub release type
+        type: choice
+        options: [Release, Beta, Alpha]
+        default: Release
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: mod-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      VERSION_BUMP: ${{ inputs.bump }}
+      RELEASE_TYPE: ${{ inputs.release_type }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Check the release helper
+        run: python tools/test_release_dispatch.py
+      - id: plan
+        name: Validate destination and save this dispatch's version plan
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+        run: python tools/release_dispatch.py prepare
+      - name: Retain the plan so a rerun cannot choose another version
+        if: steps.plan.outputs.new_plan == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: release-plan
+          path: .release/plan.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: ${{ steps.plan.outputs.java }}
+      - id: candidate
+        name: Restore the same binary when rerunning
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/release_dispatch.py candidate
+      - name: Fetch the pinned SDK and build/test once
+        if: steps.candidate.outputs.restored != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          sdk_path="$(bash tools/ci-fetch-sdk.sh)"
+          python tools/release_pipeline.py verify-sdk "$sdk_path"
+          HYTALE_SERVER_JAR="$sdk_path" bash tools/ci-build.sh
+          python tools/release_pipeline.py pack
+      - name: Retain the exact binary before publishing
+        if: steps.candidate.outputs.restored != 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: release-candidate
+          path: candidate/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Tag the versioned source and publish the same binary to both destinations
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+        run: python tools/release_dispatch.py publish
+      - name: Preserve a confirmed file ID if GitHub finalization fails
+        if: failure() && hashFiles('curseforge-upload.json') != ''
+        uses: actions/upload-artifact@v7
+        with:
+          name: curseforge-confirmed-receipt
+          path: curseforge-upload.json
+          if-no-files-found: error
+          retention-days: 30

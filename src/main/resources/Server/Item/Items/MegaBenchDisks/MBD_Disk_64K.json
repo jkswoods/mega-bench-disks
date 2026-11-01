@@ -1,0 +1,37 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.MBD_Disk_64K.name"
+  },
+  "Icon": "Icons/ItemsGenerated/MBD_Disk_64K.png",
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Model": "Blocks/MegaBenchDisks/Disk64K.blockymodel",
+  "Texture": "Items/MegaBenchDisks/Workshop.png",
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "MBD_Handling",
+  "MaxStack": 1,
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "MBD_Casing",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "MBD_Core_64K",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Workbench",
+        "Categories": [
+          "Workbench_Crafting"
+        ]
+      }
+    ],
+    "TimeSeconds": 2,
+    "OutputQuantity": 1
+  }
+}

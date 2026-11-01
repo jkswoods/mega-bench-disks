@@ -1,0 +1,9 @@
+$C = "../../Common.ui";
+@DropdownStyle = DropdownBoxStyle(
+ ...$C.@DefaultDropdownBoxStyle,
+ LabelStyle: (FontSize: 20, TextColor: #b7cedd, VerticalAlignment: Center, RenderUppercase: false),
+ EntryLabelStyle: (FontSize: 20, TextColor: #b7cedd, VerticalAlignment: Center, RenderUppercase: false),
+ SelectedEntryLabelStyle: (FontSize: 20, TextColor: #d3d6db, VerticalAlignment: Center, RenderUppercase: false, RenderBold: true),
+ HorizontalPadding: 14, HorizontalEntryPadding: 12, PanelAlign: Bottom, EntryHeight: 42
+);
+@GridStyle = (SlotSize: 78, SlotIconSize: 68, SlotSpacing: 6, SlotBackground: "InsetSlot.png");

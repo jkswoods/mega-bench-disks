@@ -1,0 +1,42 @@
+$C = "../../Common.ui";
+$S = "StorageStyles.ui";
+
+// Transparent alignment group: the two native containers below own their frames.
+Group #StoragePanel { Anchor: (Width: 836, Height: 1006);
+ $C.@DecoratedContainer #StoragePane { Anchor: (Left: 0, Right: 0, Top: 14, Height: 388);
+  #Title { Anchor: (Top: 0, Height: 54); Padding: (Full: 0);
+   Label { Anchor: (Left: 24, Width: 260, Top: 0, Bottom: 0); Text: "STORAGE"; Style: (FontSize: 28, FontName: "Secondary", TextColor: #e8cc81, RenderBold: true, VerticalAlignment: Center); }
+   TextButton #BackToCrafting { Style: $C.@SecondaryTextButtonStyle; Padding: (Horizontal: 12); Anchor: (Right: 130, Width: 208, Height: 38, Top: 8); Text: "Back to crafting"; }
+   TextButton #StorageClose { Style: $C.@SecondaryTextButtonStyle; Padding: (Horizontal: 12); Anchor: (Right: 18, Width: 100, Height: 38, Top: 8); Text: "CLOSE"; }
+  }
+  #Content { Anchor: (Top: 54); Padding: (Full: 0); LayoutMode: Full;
+   Group { Anchor: (Left: 36, Right: 36, Top: 8, Height: 32);
+    Label #Capacity { Anchor: (Left: 0, Right: 136, Top: 0, Bottom: 0); Style: (FontSize: 20, TextColor: #b7cedd, HorizontalAlignment: End, VerticalAlignment: Center); }
+    TextButton #ManageDisks { Style: $C.@SecondaryTextButtonStyle; Padding: (Horizontal: 12); Anchor: (Right: 0, Width: 120, Height: 32); Text: "Disks 0/8"; }
+   }
+   Group { Anchor: (Left: 36, Right: 36, Top: 48, Height: 40); LayoutMode: Left;
+    TextField #StorageSearch { Anchor: (Width: 336, Height: 40, Right: 16); PlaceholderText: "Search items…"; Style: (...$C.@DefaultInputFieldStyle, FontSize: 20, TextColor: #d3d6db); PlaceholderStyle: (...$C.@DefaultInputFieldPlaceholderStyle, FontSize: 20); Background: $C.@InputBoxBackground; Padding: (Horizontal: 12); }
+    TextButton #StorageFind { Style: $C.@SecondaryTextButtonStyle; Padding: (Horizontal: 12); Anchor: (Width: 114, Height: 40, Right: 16); Text: "FIND"; }
+    DropdownBox #StorageFilter { Anchor: (Width: 282, Height: 40); Style: $S.@DropdownStyle; }
+   }
+   Group #StoredGridHost { Anchor: (Left: 43, Right: 43, Top: 108, Height: 168); }
+   Group { Anchor: (Left: 36, Right: 36, Top: 286, Height: 24); LayoutMode: Left;
+    $C.@SmallSecondaryTextButton #StoragePrevious { Anchor: (Width: 54, Height: 24); Text: "<"; }
+    Label #StorageCount { FlexWeight: 1; Style: (FontSize: 16, TextColor: #96a9be, HorizontalAlignment: Center, VerticalAlignment: Center); }
+    $C.@SmallSecondaryTextButton #StorageNext { Anchor: (Width: 54, Height: 24); Text: ">"; }
+   }
+  }
+ }
+
+ $C.@DecoratedContainer #InventoryPane { Anchor: (Left: 0, Right: 0, Top: 446, Height: 540);
+  #Title { Anchor: (Top: 0, Height: 54); Padding: (Full: 0);
+   Label #InventoryHeading { Anchor: (Left: 24, Right: 182, Top: 0, Bottom: 0); Text: "INVENTORY"; Style: (FontSize: 28, FontName: "Secondary", TextColor: #e8cc81, RenderBold: true, VerticalAlignment: Center); }
+   TextButton #StorageBackpack { Anchor: (Right: 18, Top: 10, Width: 156, Height: 34); Style: $C.@SecondaryTextButtonStyle; Text: "Backpack"; Visible: false; }
+  }
+  #Content { Anchor: (Top: 54); Padding: (Full: 0); LayoutMode: Full;
+   Group #DepositGridHost { Anchor: (Left: 43, Right: 43, Top: 14, Height: 336); }
+   Group #HotbarGridHost { Anchor: (Left: 43, Right: 43, Top: 364, Height: 78); }
+   Label #StorageNotice { Anchor: (Left: 24, Right: 24, Top: 450, Height: 24); Style: (FontSize: 18, TextColor: #96a9be, Wrap: true, HorizontalAlignment: Center, VerticalAlignment: Center); }
+  }
+ }
+}

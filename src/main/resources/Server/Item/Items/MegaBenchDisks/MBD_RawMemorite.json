@@ -1,0 +1,14 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.MBD_RawMemorite.name"
+  },
+  "Icon": "Icons/ItemsGenerated/MBD_RawMemorite.png",
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Model": "Blocks/MegaBenchDisks/RawMemorite.blockymodel",
+  "Texture": "Items/MegaBenchDisks/Workshop.png",
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "MBD_Memorite",
+  "MaxStack": 64
+}

@@ -1,0 +1,3 @@
+$C = "../../Common.ui";
+$S = "StorageStyles.ui";
+ItemGrid #DepositTiles { Anchor: (Full: 0); Style: $S.@GridStyle; SlotsPerRow: 9; ShowScrollbar: false; ScrollbarStyle: $C.@DefaultScrollbarStyle; AreItemsDraggable: false; AllowMaxStackDraggableItems: false; IsCreativeSource: false; DisplayItemQuantity: true; RenderItemQualityBackground: true; HitTestVisible: true; }

@@ -1,0 +1,17 @@
+{
+  "modId": "MegaBenchDisks",
+  "displayName": "Mega Bench: Disks",
+  "hytaleFamily": "0.7",
+  "manifest": "src/main/resources/manifest.json",
+  "sdkTarget": {
+    "path": "config/target.json"
+  },
+  "artifact": "build/libs/{modId}-hytale{hytaleFamily}-{version}.jar",
+  "curseforge": {
+    "projectId": 1777244,
+    "gameVersion": "0.7",
+    "releaseType": "alpha",
+    "manualRelease": false
+  },
+  "releaseNotes": "RELEASE_NOTES.md"
+}

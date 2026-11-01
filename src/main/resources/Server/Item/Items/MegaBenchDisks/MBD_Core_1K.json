@@ -1,0 +1,41 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.MBD_Core_1K.name"
+  },
+  "Icon": "Icons/ItemsGenerated/MBD_Core_1K.png",
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Model": "Blocks/MegaBenchDisks/Core1K.blockymodel",
+  "Texture": "Items/MegaBenchDisks/Workshop.png",
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "MBD_Handling",
+  "MaxStack": 64,
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "MBD_MemoryWafer",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Ingredient_Bar_Copper",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 2
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Workbench",
+        "Categories": [
+          "Workbench_Crafting"
+        ]
+      }
+    ],
+    "TimeSeconds": 4,
+    "OutputQuantity": 1
+  }
+}

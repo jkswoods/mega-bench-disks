@@ -1,0 +1,31 @@
+$C = "../../Common.ui";
+$C.@DecoratedContainer #DiskPanel { Anchor: (Left: 405, Top: 353, Width: 800, Height: 348);
+ #Title {
+  Label { Anchor: (Left: 14, Width: 300, Height: 32); Text: "DISKS"; Style: (FontSize: 24, FontName: "Secondary", TextColor: #e8cc81, RenderBold: true, VerticalAlignment: Center); }
+  $C.@SmallSecondaryTextButton #CloseDisks { Anchor: (Right: 12, Width: 180, Height: 32); Text: "Back to storage"; }
+ }
+ #Content { Padding: (Full: 20, Top: 8);
+  Group { Anchor: (Height: 28);
+   Label #RackCapacity { Anchor: (Left: 0, Width: 580, Height: 28); Style: (FontSize: 16, TextColor: #96a9be, VerticalAlignment: Center); }
+   Group #RackNavigation { Anchor: (Right: 0, Width: 172, Height: 28); LayoutMode: Left;
+    $C.@SmallSecondaryTextButton #RackPrevious { Anchor: (Width: 80, Height: 28, Right: 12); Text: "Prev"; }
+    $C.@SmallSecondaryTextButton #RackNext { Anchor: (Width: 80, Height: 28); Text: "Next"; }
+   }
+  }
+  Group #DiskRows { Anchor: (Height: 76, Top: 8); LayoutMode: Left; }
+  Label #SelectedDisk { Anchor: (Height: 32, Top: 8); Style: (FontSize: 18, TextColor: #d3d6db, VerticalAlignment: Center); }
+  Group { Anchor: (Height: 38, Top: 4); LayoutMode: Left;
+   $C.@SmallSecondaryTextButton #DiskEject { Anchor: (Width: 142, Height: 36, Right: 12); Text: "Eject"; }
+   $C.@SmallSecondaryTextButton #DiskUpgrade { Anchor: (Width: 162, Height: 36, Right: 12); Text: "Upgrade…"; }
+   $C.@TextButton #StorageMount { Anchor: (Width: 202, Height: 36); Text: "Mount selected disk"; Visible: false; }
+  }
+  Label #MountHint { Anchor: (Height: 28, Top: 8); Style: (FontSize: 14, TextColor: #96a9be, Wrap: true); }
+  Group #UpgradePanel { Anchor: (Height: 210, Top: 8); LayoutMode: Top; Visible: false;
+   Label #UpgradePreview { Anchor: (Height: 62); Style: (FontSize: 15, TextColor: #96a9be, Wrap: true); }
+   Group #UpgradeCosts { Anchor: (Height: 64, Top: 4); LayoutMode: Left; }
+   $C.@TextButton #ConfirmUpgrade { Anchor: (Height: 38, Top: 6); Text: "Pay and upgrade selected disk"; }
+   $C.@SmallSecondaryTextButton #CancelUpgrade { Anchor: (Width: 172, Height: 28, Top: 4); Text: "Cancel preview"; }
+  }
+  Label #DiskNotice { Anchor: (Height: 36, Top: 6); Style: (FontSize: 14, TextColor: #e3be83, Wrap: true); }
+ }
+}

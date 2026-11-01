@@ -1,0 +1,33 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.MBD_MemoryWafer.name"
+  },
+  "Icon": "Icons/ItemsGenerated/MBD_MemoryWafer.png",
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Model": "Blocks/MegaBenchDisks/MemoryWafer.blockymodel",
+  "Texture": "Items/MegaBenchDisks/Workshop.png",
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "MBD_Memorite",
+  "MaxStack": 64,
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "MBD_RawMemorite",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Workbench",
+        "Categories": [
+          "Workbench_Crafting"
+        ]
+      }
+    ],
+    "TimeSeconds": 2,
+    "OutputQuantity": 2
+  }
+}
