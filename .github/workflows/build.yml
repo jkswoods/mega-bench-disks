@@ -27,7 +27,13 @@ jobs:
         if: github.event_name != 'pull_request'
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
-        run: python tools/release_dispatch.py check-connection-if-configured
+        shell: bash
+        run: |
+          if [ -n "$CURSEFORGE_API_TOKEN" ]; then
+            python tools/release_dispatch.py check-connection-if-configured
+          else
+            echo 'Building a candidate without CurseForge credentials. Publishing by workflow requires CURSEFORGE_API_TOKEN.'
+          fi
       - id: config
         run: python tools/release_pipeline.py config
       - uses: actions/setup-java@v6
